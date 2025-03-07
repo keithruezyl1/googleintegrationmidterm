@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #8e44ad;
+            --blue: #3498db;
+            --teal: #1abc9c;
+            --orange: #e67e22;
+            --red: #e74c3c;
+            --background-color: #233d4d;
+            --text-color: #ffffff;
+            --text-light: #bdc3c7;
+            --gradient: linear-gradient(135deg, #a84f15 0%, #fe7f2d 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            background-image: radial-gradient(circle at top right, rgba(182, 123, 22, 0.1), transparent 400px),
+                             radial-gradient(circle at bottom left, rgba(198, 201, 20, 0.1), transparent 400px);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 10vw;
+            color: var(--text-color);
+        }
+
+        .login-header h2 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .social-buttons {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .social-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 280px;
+            padding: 1rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .google-btn {
+            background: linear-gradient(45deg, var(--blue), #4285F4);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .github-btn {
+            background: linear-gradient(45deg, var(--purple), #9b59b6);
+            box-shadow: 0 4px 15px rgba(184, 121, 32, 0.3);
+        }
+
+        .social-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .social-button i {
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+
+        .login-divider {
+            margin: 2rem 0;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .login-footer p {
+            font-size: 1rem;
+            margin-top: 50px;
+        }
+
+        .login-footer a {
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-left: 5vw;
+            }
+
+            .social-button {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="login-header">
+        <h2>Meet Droppu.</h2>
+        <p>Contacts made simple.</p>
+    </div>
+    <div class="social-buttons">
+        <a href="/oauth2/authorization/google" class="social-button google-btn">
+            <i class="fab fa-google"></i>
+            Continue with Google
+        </a>
+        <a href="/oauth2/authorization/github" class="social-button github-btn">
+            <i class="fab fa-github"></i>
+            Continue with GitHub
+        </a>
+    </div>
+    <div class="login-footer">
+        <p>Don't have an account? <a href="#">Sign up</a></p>
+    </div>
+</div>
+</body>
+</html>
